@@ -1,0 +1,213 @@
+{
+    "show": 1,
+    "stages": 
+    {
+        "1": 
+        {
+            "1": 
+            {
+                "question": "Pregunta 1",
+                "options": 
+                    [
+                        "Correcta",
+                        "Incorrecta"
+                    ],
+                "answer": "Correcta"
+            },
+            "2": 
+            {
+                "question": "Pregunta 2",
+                "options": 
+                    [
+                        "Incorrecta",
+                        "Correcta"
+                    ],
+                "answer": "Correcta"
+            }
+        },
+        "2": 
+        {
+            "1": 
+            {
+                "question": "Pregunta 1",
+                "options": 
+                    [
+                        "Correcta",
+                        "Incorrecta"
+                    ],
+                "answer": "Correcta"
+            },
+            "2": 
+            {
+                "question": "Pregunta 2",
+                "options": 
+                    [
+                        "Incorrecta",
+                        "Correcta"
+                    ],
+                "answer": "Correcta"
+            }
+        },
+        "3": 
+        {
+            "1": 
+            {
+                "question": "Pregunta 1",
+                "options": 
+                    [
+                        "Correcta",
+                        "Incorrecta"
+                    ],
+                "answer": "Correcta"
+            },
+            "2": 
+            {
+                "question": "Pregunta 2",
+                "options": 
+                    [
+                        "Incorrecta",
+                        "Correcta"
+                    ],
+                "answer": "Correcta"
+            }
+        },
+        "4": 
+        {
+            "1": 
+            {
+                "question": "Pregunta 1",
+                "options": 
+                    [
+                        "Correcta",
+                        "Incorrecta"
+                    ],
+                "answer": "Correcta"
+            },
+            "2": 
+            {
+                "question": "Pregunta 2",
+                "options": 
+                    [
+                        "Incorrecta",
+                        "Correcta"
+                    ],
+                "answer": "Correcta"
+            }
+        },
+        "5": 
+        {
+            "1": 
+            {
+                "question": "Pregunta 1",
+                "options": 
+                    [
+                        "Correcta",
+                        "Incorrecta"
+                    ],
+                "answer": "Correcta"
+            },
+            "2": 
+            {
+                "question": "Pregunta 2",
+                "options": 
+                    [
+                        "Incorrecta",
+                        "Correcta"
+                    ],
+                "answer": "Correcta"
+            }
+        },
+        "6": 
+        {
+            "1": 
+            {
+                "question": "Pregunta 1",
+                "options": 
+                    [
+                        "Correcta",
+                        "Incorrecta"
+                    ],
+                "answer": "Correcta"
+            },
+            "2": 
+            {
+                "question": "Pregunta 2",
+                "options": 
+                    [
+                        "Incorrecta",
+                        "Correcta"
+                    ],
+                "answer": "Correcta"
+            }
+        },
+        "7": 
+        {
+            "1": 
+            {
+                "question": "Pregunta 1",
+                "options": 
+                    [
+                        "Correcta",
+                        "Incorrecta"
+                    ],
+                "answer": "Correcta"
+            },
+            "2": 
+            {
+                "question": "Pregunta 2",
+                "options": 
+                    [
+                        "Incorrecta",
+                        "Correcta"
+                    ],
+                "answer": "Correcta"
+            }
+        },
+        "8": 
+        {
+            "1": 
+            {
+                "question": "Pregunta 1",
+                "options": 
+                    [
+                        "Correcta",
+                        "Incorrecta"
+                    ],
+                "answer": "Correcta"
+            },
+            "2": 
+            {
+                "question": "Pregunta 2",
+                "options": 
+                    [
+                        "Incorrecta",
+                        "Correcta"
+                    ],
+                "answer": "Correcta"
+            }
+        },
+        "9": 
+        {
+            "1": 
+            {
+                "question": "Pregunta 1",
+                "options": 
+                    [
+                        "Correcta",
+                        "Incorrecta"
+                    ],
+                "answer": "Correcta"
+            },
+            "2": 
+            {
+                "question": "Pregunta 2",
+                "options": 
+                    [
+                        "Incorrecta",
+                        "Correcta"
+                    ],
+                "answer": "Correcta"
+            }
+        }
+    }
+}
