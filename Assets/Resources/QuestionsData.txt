@@ -1,0 +1,71 @@
+{
+    "show": 1,
+    "stages": 
+    {
+        "1": 
+        {
+            "1": 
+            {
+                "question": "lesiones en el lóbulo occipital pueden afectar tu visión",
+                "options": 
+                    [
+                        "Verdadero",
+                        "Falso"
+                    ],
+                "answer": "Verdadero"
+            }
+        },
+        "2": 
+        {
+            "1": 
+            {
+                "question": "“¿Cuál de las siguientes estructuras es responsable de la coordinación de los movimientos?",
+                "options": 
+                    [
+                        "Corteza Motora",
+                        "Cerebelo"
+                    ],
+                "answer": "Cerebelo"
+            }
+        },
+        "3": 
+        {
+            "1": 
+            {
+                "question": "La corteza motora y el cerebelo trabajan en conjunto para asegurar la correcta ejecución de los movimientos.",
+                "options": 
+                    [
+                        "Verdadero",
+                        "Falso"
+                    ],
+                "answer": "Verdadero"
+            }
+        },
+        "4": 
+        {
+            "1": 
+            {
+                "question": "En el cerebro, cada región realiza su función de manera aislada.",
+                "options": 
+                    [
+                        "Verdadero",
+                        "Falso"
+                    ],
+                "answer": "Falso"
+            }
+        },
+        "5": 
+        {
+            "1": 
+            {
+                "question": "Las memorias se almacenan en las distintas conexiones entre las neuronas.",
+                "options": 
+                    [
+                        "Verdadero",
+                        "Falso"
+                    ],
+                "answer": "Verdadero"
+            }
+        }
+    }
+}

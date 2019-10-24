@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -95,48 +94,6 @@ public class MechanicController : MonoBehaviour
     {
         StopCoroutine(this._portalTimeCoroutine);
     }
-
-
-    /* 
-	IEnumerator portalCoroutine()
-	{
-
-		contador = ViewController._currentGameModel._entryTime;
-		while(contador > 0)
-		{
-			contador--;
-			_timeCountText.text = contador.ToString();
-			yield return new WaitForSeconds(1f);
-		}
-
-		while(true)
-		{
-			contador = ViewController._currentGameModel._postEntryTime;
-			while(contador > 0)
-			{
-				contador--;
-				_timeCountText.text = contador.ToString();
-				yield return new WaitForSeconds(1f);
-			}
-
-			if(this.GetComponent<ViewController>()._portalInstance == null)
-				putPortal();
-
-			GlobalVariables._allowPurpleBonus = true;
-			_timeCountText.color = new Color(255,0,0,255);
-
-			contador = 10;
-			while(contador > 0)
-			{
-				contador--;
-				_timeCountText.text = contador.ToString();
-				yield return new WaitForSeconds(1f);
-			}
-			_timeCountText.color = new Color(0,255,0,255);
-
-		}
-	}
-	*/
 
     IEnumerator initStageTime()
     {
