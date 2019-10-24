@@ -8,11 +8,11 @@ public class GarageButtonController : MonoBehaviour , IPointerDownHandler
 	public void OnPointerDown(PointerEventData e)
 	{
 #if UNITY_STANDALONE
-        //Gabriel Change for Arcade
-        /*if(_idStage <= PlayerPrefs.GetInt("lastStageCompleted"))
+
+    if(_idStage <= PlayerPrefs.GetInt("lastStageCompleted"))
 		{
 			GameObject.Find("GameController").gameObject.GetComponent<ViewController>().refreshContext(_idStage);
-		}*/
+		}
 #endif
 #if UNITY_WEBGL || UNITY_EDITOR
         if (_idStage <= GlobalVariables._currentLevel)

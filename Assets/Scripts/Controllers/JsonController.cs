@@ -21,8 +21,9 @@ public class JsonController : MonoBehaviour
 
 
 #if UNITY_STANDALONE
-	void Start()
-	{
+	void Start() { 
+
+             Debug.Log("Load Main Scene");
 	 	    jsonDataStages = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/Resources/GameData.txt").Trim());
 	 	    jsonDataQuestions = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/Resources/QuestionsData.txt").Trim());
 

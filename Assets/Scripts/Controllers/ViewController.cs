@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Prime31.TransitionKit;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ViewController : MonoBehaviour
 {
@@ -289,7 +290,6 @@ public class ViewController : MonoBehaviour
 					this._iconStageGroup.transform.GetChild(_iconStageGroup.transform.childCount-1).gameObject.GetComponent<Image>().color = this._stageCompleted;
 					this._iconStageGroup.GetChild(_iconStageGroup.transform.childCount-1).transform.localScale = new Vector2(1f,1f);
 				}
-
 				else
 				{
 					resetGameInstances();
@@ -312,9 +312,12 @@ public class ViewController : MonoBehaviour
 			ViewController._gameState._state = GameState.States.MAINSCENE;
 			PlayerPrefs.SetInt("GameComplete", 1);
 			resetGame();
-			
-			updateView();
-		}
+            updateView();
+
+            deleteProgress();
+            //SceneManager.LoadScene(0);
+            Debug.Log("Reset Scene Load Final Scene");
+        }
 
 		else if(ViewController._gameState._state == GameState.States.GAMEOVER)
 		{	
@@ -323,10 +326,11 @@ public class ViewController : MonoBehaviour
 
 			// GlobalVariables._gameComplete = false;
 			resetGame();
-			
-			updateView();
 
-		}
+            deleteProgress();
+            //SceneManager.LoadScene(0);
+            Debug.Log("Reset Scene Load Game Over");
+        }
     }
 
 	public void exitGame()
@@ -334,12 +338,12 @@ public class ViewController : MonoBehaviour
 		Application.Quit();
 	}
 
-    internal void createPortal(int iReset, int jReset)
+    internal void createPortal(int iReset, int jReset,float spawnTime)
     {
 		Vector2 vector = new Vector2(jReset,iReset);
 		this._portalInstance = Instantiate(_portalPrefab, new Vector2((jReset*GlobalVariables._widthTile), (iReset * -GlobalVariables._widthTile)+ GlobalVariables._widthTile) - MapGeneratorController._offsetMap, Quaternion.identity, this._gameObjectsGameScene.transform) as GameObject;
 		_portalInstance.GetComponent<Bonus>()._position = vector;
-		try{ Destroy(_portalInstance,10f); }catch(Exception e){}
+		try{ Destroy(_portalInstance, spawnTime); }catch(Exception e){}
 		
     }
 
@@ -633,22 +637,6 @@ public class ViewController : MonoBehaviour
 
     private void updateIconStageGroup()
 	{
-
-#if UNITY_EDITOR || UNITY_STANDALONE
-		for(int i = 0 ; i < PlayerPrefs.GetInt("lastStageCompleted") ;i++)
-		{
-			this._iconStageGroup.GetChild(i).transform.localScale = new Vector2(1,1);
-			this._iconStageGroup.GetChild(i).gameObject.GetComponent<Image>().color = this._stageCompleted;
-		}
-#endif
-
-#if UNITY_WEBGL
-		for(int i = 0 ; i < GlobalVariables._currentLevel ;i++)
-		{
-			this._iconStageGroup.GetChild(i).transform.localScale = new Vector2(1,1);
-			this._iconStageGroup.GetChild(i).gameObject.GetComponent<Image>().color = this._stageCompleted;
-		}
-#endif
 
 		this._iconStageGroup.GetChild(GlobalVariables._currentLevel).GetComponent<Image>().color = this._currentStageColor;
 		this._iconStageGroup.GetChild(GlobalVariables._currentLevel).gameObject.transform.localScale = new Vector2(1.2f, 1.2f);
@@ -960,5 +948,27 @@ public class ViewController : MonoBehaviour
 		updateView();
 	}
 
-#endregion
+    public void deleteProgress()
+    {
+        PlayerPrefs.DeleteAll();
+        Time.timeScale = 1;
+
+        GlobalVariables._currentLevel = PlayerPrefs.GetInt("lastStageCompleted");
+        GlobalVariables._userLevel = PlayerPrefs.GetInt("lastStageCompleted");
+        resetGame();
+        resetGameInstances();
+
+        for (int i = 0; i < this._iconStageGroup.childCount; i++)
+        {
+            Destroy(_iconStageGroup.GetChild(i).gameObject);
+        }
+
+
+        this._gameSceneCanvas.SetActive(false);
+        this._gameObjectsGameScene.SetActive(false);
+        ViewController._gameState._state = GameState.States.MAINSCENE;
+        updateView();
+    }
+
+    #endregion
 }

@@ -20,6 +20,7 @@ public class MechanicController : MonoBehaviour
     public Coroutine _initStageTime;
     public Coroutine _portalTimeCoroutine;
     public float contador;
+    private float portalSpawnTime;
 
     public void resetPlayerPosition()
     {
@@ -102,16 +103,22 @@ public class MechanicController : MonoBehaviour
         {
             time--;
             _timeCountText.text = time.ToString();
+            Debug.Log("Timer Init Stage");
             yield return new WaitForSeconds(1f);
         }
-
-        this._portalTimeCoroutine = StartCoroutine(portalCoroutine(ViewController._currentGameModel._postEntryTime));
+        portalSpawnTime = ViewController._currentGameModel._postEntryTime;
+        this._portalTimeCoroutine = StartCoroutine(portalCoroutine(portalSpawnTime));
     }
 
     IEnumerator portalCoroutine(float time)
     {
+        if (this.GetComponent<ViewController>()._portalInstance == null) { 
+            putPortal();
+        }
+
+        GlobalVariables._allowPurpleBonus = true;
+        _timeCountText.color = new Color(255, 0, 0, 255);
         contador = time;
-        this._timeCountText.color = new Color(0, 255, 0, 255);
         while (contador > 0)
         {
             contador--;
@@ -119,12 +126,8 @@ public class MechanicController : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
 
-        if (this.GetComponent<ViewController>()._portalInstance == null)
-            putPortal();
-
-        GlobalVariables._allowPurpleBonus = true;
-        _timeCountText.color = new Color(255, 0, 0, 255);
         contador = time;
+        this._timeCountText.color = new Color(0, 255, 0, 255);
         while (contador > 0)
         {
             contador--;
@@ -149,7 +152,7 @@ public class MechanicController : MonoBehaviour
         } while (ViewController._currentGameModel._map[iReset, jReset] == -1);
 
 
-        this.gameObject.GetComponent<ViewController>().createPortal(iReset, jReset);
+        this.gameObject.GetComponent<ViewController>().createPortal(iReset, jReset, portalSpawnTime);
     }
 
     public void partialGameOverMethod()
